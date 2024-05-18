@@ -8,9 +8,9 @@ const socials = {
 
 export default function Home() {
   return (
-    <section className="from-d-black-50 to-d-black-950 flex h-screen w-full flex-col items-center justify-center gap-y-10 bg-gradient-to-b">
+    <section className="flex h-screen w-full flex-col items-center justify-center gap-y-10 bg-gradient-to-b from-d-black-50 to-d-black-950">
       <hgroup className="flex w-fit flex-col text-center">
-        <h1 className="text-d-brand-50 text-[100px]/[80px] font-extrabold">
+        <h1 className="text-[100px]/[80px] font-extrabold text-d-brand-50">
           ~
         </h1>
         <p className="text-d-white-950">
@@ -28,7 +28,7 @@ export default function Home() {
               <i
                 className={classNames(
                   `bi bi-${icon}`,
-                  'text-d-white-950 hover:text-d-white-50 transition-colors'
+                  'text-d-white-950 transition-colors hover:text-d-white-50'
                 )}
               />
             </Link>
