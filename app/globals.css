@@ -3,3 +3,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.d-input {
+  @apply w-full rounded-lg border border-neutral-800 bg-neutral-900 px-4 py-3 text-sm outline-none placeholder:text-neutral-500;
+}
+
+.d-button {
+  @apply w-full rounded-lg bg-d-brand-50 px-4 py-2 text-sm font-semibold text-d-white-50 transition-colors hover:bg-d-brand-950;
+}

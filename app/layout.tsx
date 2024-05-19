@@ -3,8 +3,7 @@ import { Inter } from 'next/font/google'
 import '@/app/globals.css'
 import StoreProvider from '@/components/store/provider'
 import classNames from 'classnames'
-import Navbar from '@/components/layout/navbar'
-import Footer from '@/components/layout/footer'
+import type { PropsWithChildren } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -53,25 +52,17 @@ export const viewport: Viewport = {
   themeColor: '#151515'
 }
 
-export default function RootLayout({
-  children
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <StoreProvider>
       <html lang="en">
         <body
           className={classNames(
             inter.className,
-            'm-0 flex min-h-screen w-full flex-col justify-between bg-d-white-50 p-0 text-d-black-50'
+            'm-0 min-h-screen w-full bg-d-black-50 p-0 text-d-white-50'
           )}
         >
-          <section className="w-full">
-            <Navbar />
-            <main>{children}</main>
-          </section>
-          <Footer />
+          {children}
         </body>
       </html>
     </StoreProvider>
