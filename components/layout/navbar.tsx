@@ -7,7 +7,7 @@ const productItems: DropdownItem[] = [{ text: 'About', url: '/about' }]
 
 export default function Navbar() {
   return (
-    <nav className="w-full border-b border-neutral-800 py-4">
+    <nav className="w-full border-b border-neutral-800 py-3">
       <ul className="mx-auto grid w-full max-w-[1500px] grid-cols-3">
         <li className="flex w-full items-center">
           <ul className="flex w-fit items-center gap-x-5">

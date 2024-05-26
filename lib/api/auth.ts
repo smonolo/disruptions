@@ -1,3 +1,5 @@
+import { apiRequest } from '@/lib/api'
+
 type RegistrationData = {
   username: string
   email: string
@@ -8,45 +10,19 @@ export const register = async ({
   username,
   email,
   password
-}: RegistrationData) => {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/auth/register`,
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, email, password })
-    }
-  )
-
-  if (!response.ok) {
-    const { error } = await response.json()
-
-    throw new Error(error)
-  }
-
-  return response.json()
-}
+}: RegistrationData) =>
+  await apiRequest('auth/register', {
+    method: 'POST',
+    body: JSON.stringify({ username, email, password })
+  })
 
 type LoginData = {
   email: string
   password: string
 }
 
-export const login = async ({ email, password }: LoginData) => {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/auth/login`,
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
-    }
-  )
-
-  if (!response.ok) {
-    const { error } = await response.json()
-
-    throw new Error(error)
-  }
-
-  return response.json()
-}
+export const login = async ({ email, password }: LoginData) =>
+  await apiRequest('auth/login', {
+    method: 'POST',
+    body: JSON.stringify({ email, password })
+  })

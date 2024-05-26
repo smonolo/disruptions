@@ -1,9 +1,17 @@
 'use client'
 
 import AuthCard from '@/components/auth/auth-card'
+import { useForm } from '@tanstack/react-form'
 import Link from 'next/link'
 
 export default function Login() {
+  const form = useForm({
+    defaultValues: {
+      email: '',
+      password: ''
+    }
+  })
+
   return (
     <AuthCard title="Welcome back" text="Sign in to your account to continue.">
       <form className="flex flex-col gap-y-3">
